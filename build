@@ -1,0 +1,14 @@
+#! /bin/sh
+
+ 
+g++  -lmysqlclient_r -lz -lnsl --ansi -g -O2 -L/usr/lib/mysql/ -I/usr/include/mysql/ -o skillwatch \
+	/home/volhv/include/config.cpp \
+	/home/volhv/include/common.cpp \
+	/home/volhv/include/base64.cpp \
+	/home/volhv/include/mydb.cpp \
+	/home/volhv/include/functions.cpp \
+	/home/volhv/include/splog.cpp \
+	skillwatch.cpp \
+	-I/home/volhv/include/ /usr/lib/libpcrecpp.a -lpcre \
+	`curl-config --libs` \
+	`xml2-config --cflags` `xml2-config --libs`
